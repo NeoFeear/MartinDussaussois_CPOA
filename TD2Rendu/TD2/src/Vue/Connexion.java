@@ -9,14 +9,14 @@ public class Connexion {
 	private Connection maConnexion;
 	
 	private void creeConnexion() {
-		String url = "jdbc:mysql://localhost:3306/martin776u_cpoa_td1";
-		String login = "root";
-		String mdp = "";
+		String url = "jdbc:mysql://devbdd.iutmetz.univ-lorraine.fr:3306/dussauss4u_cpoa";
+		String login = "dussauss4u_appli";
+		String mdp = "Tomtom57";
 		url += "?serverTimezone=Europe/Paris";
 
 		try {
 			maConnexion = DriverManager.getConnection(url, login, mdp);
-			//System.out.println("Connexion effectuée !");
+			//System.out.println("Connexion effectuÃ©e !");
 		} 
 		catch (SQLException sqle) 
 		{
