@@ -42,29 +42,46 @@ public class CtrlProduit implements Initializable
 
         Categorie categ = cbx_categorie.getValue();
         
-        Produit produit = new Produit(nom, desc, tarif, categ);
+        boolean nom_vide = (nom == null || nom.trim().length() == 0);
+        boolean desc_vide = (desc == null || desc.trim().length() == 0);
+        boolean tarif_vide = (tarif == 0);
+        boolean categ_vide = (categ == null);
         
     	this.labelAff.setStyle("-fx-text-fill: red;");
-    	if ((nom == null || nom.trim().length() == 0) && (desc == null || desc.trim().length() == 0) && (tarif == 0) && (categ == null))
+	
+    	if (nom_vide && desc_vide && tarif_vide && categ_vide)
+            this.labelAff.setText("Tous les champs sont vides");
+    	
+    	else if (nom_vide && (tarif_vide || categ_vide))
+            this.labelAff.setText("Un ou plusieurs champs sont vides");
+    	
+    	else if (desc_vide && (tarif_vide || categ_vide))
+            this.labelAff.setText("Un ou plusieurs champs sont vides");
+    	
+    	else if (tarif_vide && (desc_vide || nom_vide || categ_vide))
+            this.labelAff.setText("Un ou plusieurs champs sont vides");
+    	
+    	else if (categ_vide && (desc_vide || tarif_vide || nom_vide))
             this.labelAff.setText("Un ou plusieurs champs sont vides");
     		
-    	else if ((nom == null || nom.trim().length() == 0) && (desc == null || desc.trim().length() == 0))
+    	else if (nom_vide && desc_vide)
             this.labelAff.setText("Nom et description vides");
     	
-    	else if (nom == null || nom.trim().length() == 0)
+    	else if (nom_vide)
             this.labelAff.setText("Nom vide");
     	
-        else if (desc == null || desc.trim().length() == 0)
+        else if (desc_vide)
             this.labelAff.setText("Description vide");
     	
         /*else if (tarif non numerique)
         	this.labelAff.setText("Le tarif n'est pas au format numerique");*/
     	
-        else if (categ == null)
+        else if (categ_vide)
         	this.labelAff.setText("Veuillez selectionner une categorie");
         	
         else
         {
+        	Produit produit = new Produit(nom, desc, tarif, categ);
         	this.labelAff.setStyle("-fx-text-fill: black;");
         	this.labelAff.setText(produit.toString());
         }
