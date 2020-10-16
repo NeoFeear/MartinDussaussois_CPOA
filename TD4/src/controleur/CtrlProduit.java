@@ -48,36 +48,11 @@ public class CtrlProduit implements Initializable
         boolean categ_vide = (categ == null);
         
     	this.labelAff.setStyle("-fx-text-fill: red;");
-	
-    	if (nom_vide && desc_vide && tarif_vide && categ_vide)
-            this.labelAff.setText("Tous les champs sont vides");
-    	
-    	else if (nom_vide && (tarif_vide || categ_vide))
+    	if (nom_vide || desc_vide || tarif_vide || categ_vide)
             this.labelAff.setText("Un ou plusieurs champs sont vides");
-    	
-    	else if (desc_vide && (tarif_vide || categ_vide))
-            this.labelAff.setText("Un ou plusieurs champs sont vides");
-    	
-    	else if (tarif_vide && (desc_vide || nom_vide || categ_vide))
-            this.labelAff.setText("Un ou plusieurs champs sont vides");
-    	
-    	else if (categ_vide && (desc_vide || tarif_vide || nom_vide))
-            this.labelAff.setText("Un ou plusieurs champs sont vides");
-    		
-    	else if (nom_vide && desc_vide)
-            this.labelAff.setText("Nom et description vides");
-    	
-    	else if (nom_vide)
-            this.labelAff.setText("Nom vide");
-    	
-        else if (desc_vide)
-            this.labelAff.setText("Description vide");
     	
         /*else if (tarif non numerique)
         	this.labelAff.setText("Le tarif n'est pas au format numerique");*/
-    	
-        else if (categ_vide)
-        	this.labelAff.setText("Veuillez selectionner une categorie");
         	
         else
         {
