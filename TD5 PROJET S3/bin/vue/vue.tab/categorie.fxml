@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="527.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.CtrlCategorie">
+	<children>
+		<AnchorPane prefHeight="200.0" prefWidth="200.0">
+			<children>
+				<Label layoutX="15.0" layoutY="30.0" prefHeight="20.0" prefWidth="90.0" text="Recherche : " />
+				<TextField fx:id="tf_search" layoutX="110.0" layoutY="27.0"/>
+				<Button fx:id="btnAjoutCategorie" layoutX="600.0" layoutY="100.0" mnemonicParsing="false" onAction="#ajoutCategorie" prefHeight="35.0" prefWidth="90.0" text="Ajouter" />
+				<Button fx:id="btnModifCateg" disable="true" layoutX="600.0" layoutY="200.0" mnemonicParsing="false" onAction="#modifCateg" prefHeight="35.0" prefWidth="90.0" text="Modifier" />
+				<Button fx:id="btnSupprCateg" disable="true" layoutX="600.0" layoutY="300.0" mnemonicParsing="false" onAction="#supprCategorie" prefHeight="35.0" prefWidth="90.0" text="Supprimer" />
+				<Button fx:id="btnAnnulerSelec" disable="true" layoutX="460.0" layoutY="400.0" mnemonicParsing="false" onAction="#annulerSelection" prefHeight="35.0" prefWidth="132.0" text="Annuler selection" />
+				<TableView fx:id="tblCategorie" layoutY="100.0" prefHeight="350.0" prefWidth="450.0">
+					<columns>
+						<TableColumn minWidth="50.0" prefWidth="50" text="ID" />
+						<TableColumn minWidth="400.0" prefWidth="400.0" text="Titre" />
+					</columns>
+				</TableView>
+			</children>
+		</AnchorPane>
+	</children>
+</VBox>

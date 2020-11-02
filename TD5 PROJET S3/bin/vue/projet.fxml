@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="527.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.CtrlProjet">
+	<children>
+		<ToolBar prefHeight="21.0" prefWidth="700.0">
+			<items>
+				<MenuButton fx:id="menuButton" mnemonicParsing="false" prefHeight="34.0" prefWidth="120.0" text="Persistance">
+					<items>
+						<MenuItem mnemonicParsing="false" onAction="#mysql" text="MySQL" />
+						<MenuItem mnemonicParsing="false" onAction="#liste_memoire" text="ListeMemoire" />
+					</items>
+				</MenuButton>
+			</items>
+		</ToolBar>
+		<TabPane prefHeight="479.0" prefWidth="700.0" tabClosingPolicy="UNAVAILABLE">
+			<tabs>
+				<Tab fx:id="tblCategorie" text="Categorie">
+					<fx:include fx:id="tblCategorie" source="vue.tab/categorie.fxml" />
+				</Tab>
+			
+				<Tab fx:id="tblProduit" text="Produit">
+					<fx:include fx:id="tblProduit" source="vue.tab/produit.fxml" />
+				</Tab>
+				
+				<Tab fx:id="tblClient" text="Client">
+					<fx:include fx:id="tblClient" source="vue.tab/client.fxml" />
+				</Tab>
+			</tabs>
+		</TabPane>
+	</children>
+</VBox>
