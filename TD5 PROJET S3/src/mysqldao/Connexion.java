@@ -8,12 +8,12 @@ public static Connexion instance;
 	private Connection maConnexion;
 	
 	private void creeConnexion() {
-		String url = "jdbc:mysql://localhost:3306/martin776u_cpoa";
+		/*String url = "jdbc:mysql://localhost:3306/martin776u_cpoa";
 		String login = "root";
-		String mdp = "";	
-		/*String url = "jdbc:mysql://devbdd.iutmetz.univ-lorraine.fr:3306/dussauss4u_cpoa";
+		String mdp = "";	*/
+		String url = "jdbc:mysql://devbdd.iutmetz.univ-lorraine.fr:3306/dussauss4u_cpoa";
 		String login = "dussauss4u_appli";
-		String mdp = "Tomtom57";*/
+		String mdp = "Tomtom57";
 		url += "?serverTimezone=Europe/Paris";
 
 		try {
